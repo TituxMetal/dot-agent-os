@@ -51,14 +51,14 @@ ELSE:
 
 ### Choose Libraries Wisely
 
-When adding third-party dependencies:
+When adding third-party dependencies, ALWAYS ask the user to know if they have a preference for a
+library in a particular context, NEVER make assumptions. If not, choose the most popular and
+actively maintained option. Check the library's GitHub repository for:
 
-- Select the most popular and actively maintained option
-- Check the library's GitHub repository for:
-  - Recent commits (within last 6 months)
-  - Active issue resolution
-  - Number of stars/downloads
-  - Clear documentation </conditional-block>
+- Recent commits (within last 6 months)
+- Active issue resolution
+- Number of stars/downloads
+- Clear documentation </conditional-block>
 
 ---
 
@@ -81,7 +81,8 @@ We follow a strict, comprehensive Git workflow to ensure a clean, linear, and ma
 ### 2. Commit Process
 
 - **Conventional Commits**: All commit messages **must** follow the `type(scope): description`
-  format. To enforce this, use `yarn commit`.
+  format. To enforce this, use `yarn commit` if available, or suggest the message title and the
+  message description to the user in two separate blocks of Markdown formatted text.
   - **Types**: `feat`, `fix`, `docs`, `chore`, `refactor`, `style`, `test`.
   - **Description**: Start with a lowercase letter and keep it under 50 characters. Use present
     tense (e.g., "add" not "added").
@@ -114,7 +115,10 @@ We follow a strict, comprehensive Git workflow to ensure a clean, linear, and ma
 
 A comprehensive testing strategy is essential for maintaining code quality and preventing
 regressions. We employ different strategies for the backend and frontend to best suit their
-respective architectures.
+respective architectures. We always collocate the test files with the code they test, in the same
+level of the file structure. The test files are named like the code files, but with the suffix
+`.spec.ts/tsx`. The only exception is for E2E tests, which are named like the code files, but with
+the suffix `.e2e.ts/tsx`.
 
 ### Backend Testing (Jest)
 
