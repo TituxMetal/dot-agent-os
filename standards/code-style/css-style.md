@@ -1,10 +1,12 @@
 # CSS Style Guide
 
-We always use the latest version of TailwindCSS for all CSS.
+We always use the latest stable version of TailwindCSS for all CSS. No configuration file is needed.
+Only the `@tailwind` directive and some defaults are needed in the
+`{project-name}/src/styles/global.css` file.
 
 ## CSS Class Formatting
 
-Tailwind CSS classes in HTML and JSX should be written on a single line.
+Tailwind CSS classes in HTML and TSX should be written on a single line.
 
 **Example:**
 
@@ -32,3 +34,17 @@ We use the `@apply` directive to create custom, reusable component classes in ou
   }
 }
 ```
+
+## Default colors
+
+We use the following default colors:
+
+- `bg-zinc-800` for the main background color, NEVER USE full white background, prefer dark colors
+- `text-zinc-200` for the main text color, NEVER USE full white text, prefer a shade of zinc
+- `hover:text-sky-200` for the main hover text color, essentially for links
+
+## Default font
+
+We use the following default font:
+
+- `font-sans` for the main font
